@@ -1,0 +1,54 @@
+/* Style the entire webpage */
+body {
+    font-family: Arial, sans-serif;
+    max-width: 900px;
+    margin: auto;
+    padding: 20px;
+    background-color: #f4f4f4;
+}
+
+/* Style the main heading */
+h1 {
+    text-align: center;
+}
+
+/* Add space below paragraphs */
+p {
+    line-height: 1.6;
+}
+
+/* Style the smaller headings */
+h2 {
+    margin-top: 30px;
+}
+
+/* Add space around the Liverpool logo */
+img {
+    display: block;
+    margin: 20px 0;
+}
+
+/* Style the table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+/* Add borders and spacing to table cells */
+th, td {
+    border: 1px solid black;
+    padding: 10px;
+    text-align: left;
+}
+
+/* Style the table header */
+th {
+    background-color: #dddddd;
+}
+
+/* Add space between form inputs */
+input {
+    padding: 10px;
+    margin: 5px;
+}
