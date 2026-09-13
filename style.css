@@ -1,32 +1,76 @@
-/* Style the entire webpage */
+/* 
+   ELEMENT SELECTOR:
+   This matches every <body> element.
+   It sets the basic font, background, and text color for the page.
+*/
 body {
     font-family: Arial, sans-serif;
-    max-width: 900px;
-    margin: auto;
-    padding: 20px;
     background-color: #f4f4f4;
+    color: #222;
 }
 
-/* Style the main heading */
-h1 {
+
+/*
+   ID SELECTOR:
+   This matches the element with id="main-title".
+   The ID is used for the main title because there is only one main title.
+*/
+#main-title {
     text-align: center;
+    margin-top: 40px;
+    margin-bottom: 30px;
 }
 
-/* Add space below paragraphs */
-p {
-    line-height: 1.6;
+
+/*
+   CLASS SELECTOR:
+   This matches every element with class="intro-section".
+   CSS Grid creates two columns on a larger screen.
+*/
+.intro-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+
+    /*
+       Padding creates space INSIDE the section.
+       I use padding here so the content does not touch the edges.
+    */
+    padding: 30px;
+
+    background-color: white;
+    border-radius: 10px;
 }
 
-/* Style the smaller headings */
-h2 {
-    margin-top: 30px;
+
+/* Style the Liverpool logo */
+.intro-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-/* Add space around the Liverpool logo */
-img {
-    display: block;
-    margin: 20px 0;
+
+/* Make sure the image does not become too large */
+.intro-image img {
+    max-width: 100%;
+    width: 250px;
+    height: auto;
 }
+
+
+/* 
+   This class adds space around the other sections.
+   Margin creates space OUTSIDE an element.
+*/
+.content-section {
+    margin-top: 35px;
+    margin-bottom: 35px;
+    padding: 25px;
+    background-color: white;
+    border-radius: 10px;
+}
+
 
 /* Style the table */
 table {
@@ -35,20 +79,86 @@ table {
     margin-top: 15px;
 }
 
-/* Add borders and spacing to table cells */
-th, td {
-    border: 1px solid black;
+
+/* Style table cells */
+th,
+td {
+    border: 1px solid #999;
     padding: 10px;
     text-align: left;
 }
 
-/* Style the table header */
+
+/* Style the table headings */
 th {
-    background-color: #dddddd;
+    background-color: #ddd;
 }
 
-/* Add space between form inputs */
-input {
+
+/* Add space between list items */
+li {
+    margin-bottom: 8px;
+}
+
+
+/*
+   HOVER EFFECT:
+   When the mouse moves over a link or button,
+   the background becomes darker.
+*/
+a:hover,
+button:hover {
+    opacity: 0.8;
+}
+
+
+/* Style the form */
+form {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+
+/* Style the text and email boxes */
+form input {
     padding: 10px;
-    margin: 5px;
+    border: 1px solid #999;
+    border-radius: 5px;
+}
+
+
+/*
+   MEDIA QUERY:
+   This rule takes over when the screen is smaller than 768px.
+   The two-column section becomes one column so it fits on a phone.
+*/
+@media (max-width: 767px) {
+
+    .intro-section {
+        grid-template-columns: 1fr;
+        padding: 20px;
+    }
+
+    #main-title {
+        font-size: 32px;
+    }
+
+    .content-section {
+        padding: 20px;
+    }
+
+    table {
+        font-size: 14px;
+    }
+
+    form {
+        flex-direction: column;
+    }
+
+    form input,
+    form button {
+        width: 100%;
+    }
+
 }
